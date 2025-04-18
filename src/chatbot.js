@@ -17,18 +17,10 @@ export function askForContactInformation() {
 }
 
 export async function saveInformation(db, data) {
+  console.log("About to save information in the database. Data:", data);
   const usersCollection = collection(db, "users");
-  const { companyName, companyIndustry, contactEmail, websiteRequirements, designPreferences, uniqueNeeds } = data;
   try {    
-    const docRef = await addDoc(usersCollection, {
-      companyName: companyName,
-      companyIndustry: companyIndustry,
-      contactEmail: contactEmail,
-      websiteRequirements: websiteRequirements,
-      designPreferences: designPreferences,
-      uniqueNeeds: uniqueNeeds,
-      consultationDateTime: data.consultationDateTime,
-    });
+    const docRef = await addDoc(usersCollection, data);
     console.log("Data saved correctly to firestore! Document ID: " + docRef.id);
   } catch (e) {console.error("Error adding document: ", e);}
 }

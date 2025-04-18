@@ -46,23 +46,6 @@ function handleUserInput(userInput, conversationState) {
     console.log("Transitioning to DESIGN_PREFERENCE state.");
     return askForDesignPreference();
   }
-
-  if (conversationState === "DESIGN_PREFERENCE") {
-    data.designPreferences = userInput;
-    console.log("Transitioning to UNIQUE_NEEDS state.");
-    return askForUniqueNeeds();
-  }
-
-  if (conversationState === "OFFER_CONSULTATION") {    
-    if (userInput.toLowerCase() === "yes") {      
-      return "Great! Please provide your preferred date and time for the consultation.";
-    } else if (userInput.toLowerCase() === "no") {
-      return "Ok, we will not schedule a consultation.";
-    }else {
-      return "Please answer yes or no.";
-    }
-  }  
-
   if (conversationState === "UNIQUE_NEEDS") {
     data.uniqueNeeds = userInput;
     console.log("Transitioning to OFFER_CONSULTATION state.");
