@@ -24,6 +24,7 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-purple-500/20" />
           <div className="container relative flex flex-col items-center justify-center space-y-4 py-24 text-center md:py-32">
             <div className="space-y-2">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
@@ -43,13 +44,13 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="container pb-8">
+          <div className="container pb-8 flex justify-center">
             <Image
               src="/pink-paw-parlor.png"
               alt="Glamorous Paws Grooming Salon"
               width={1200}
               height={500}
-              className="mx-auto rounded-lg object-cover shadow-lg"
+              className="rounded-lg object-cover shadow-lg"
             />
           </div>
         </section>
@@ -114,14 +115,9 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="py-16 md:py-24">
           <div className="container">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Family-Owned Pet Care</h2>
-              <p className="mx-auto max-w-[700px] mt-4 text-muted-foreground">
-                We take pride in providing personalized care for each pet that visits our salon.
-              </p>
-            </div>
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
               <div className="space-y-4">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Family-Owned Pet Care</h2>
                 <p className="text-muted-foreground">
                   Glamorous Paws Grooming and More is a family-owned pet grooming and bakery located in El Dorado
                   Springs, Missouri. We take pride in providing personalized care for each pet that visits our salon.
@@ -134,7 +130,7 @@ export default function Home() {
                   In addition to our grooming services, we offer homemade pet treats from our bakery, made with
                   high-quality ingredients that pets love.
                 </p>
-                <div className="flex items-center justify-center space-x-4 pt-4">
+                <div className="flex items-center space-x-4 pt-4">
                   <div className="flex items-center">
                     <Clock className="mr-2 h-5 w-5 text-pink-500" />
                     <span className="text-sm">Open now</span>
@@ -151,7 +147,7 @@ export default function Home() {
                   alt="Grooming in action"
                   width={600}
                   height={400}
-                  className="mx-auto rounded-lg object-cover shadow-lg"
+                  className="rounded-lg object-cover shadow-lg"
                 />
                 <div className="absolute -bottom-6 -left-6 rounded-lg bg-background p-6 shadow-lg">
                   <div className="flex items-center space-x-2">
@@ -260,17 +256,15 @@ export default function Home() {
         </section>
 
         {/* Booking Section */}
-        <section id="booking" className="bg-background py-16 md:py-24">
+        <section id="booking" className="bg-gradient-to-r from-pink-50 to-purple-50 py-16 md:py-24">
           <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Book Your Pet's Appointment</h2>
-              <p className="mx-auto max-w-[700px] mt-4 text-muted-foreground">
-                Schedule a grooming session for your furry friend. We'll make sure they look and feel their best!
-              </p>
-            </div>
             <div className="grid gap-12 lg:grid-cols-2">
               <div className="space-y-4">
-                <div className="flex flex-col items-center space-y-4 pt-4">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Book Your Pet's Appointment</h2>
+                <p className="text-muted-foreground">
+                  Schedule a grooming session for your furry friend. We'll make sure they look and feel their best!
+                </p>
+                <div className="space-y-4 pt-4">
                   <div className="flex items-start space-x-4">
                     <Phone className="mt-0.5 h-5 w-5 flex-shrink-0 text-pink-500" />
                     <div>
@@ -296,16 +290,14 @@ export default function Home() {
                 <div className="pt-4">
                   <Card>
                     <CardContent className="p-6">
-                      <div className="aspect-video overflow-hidden rounded-lg relative">
+                      <div className="aspect-video overflow-hidden rounded-lg">
                         <Image
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-41sOl1lmuzijExJ6TvN9FMXZ0mpSnL.png"
-                          alt="Map showing location of Glamorous Paws Grooming and More"
-                          fill
-                          className="object-cover"
+                          src="/map-eldorado.png"
+                          alt="Map showing Glamorous Paws location in El Dorado Springs"
+                          width={800}
+                          height={450}
+                          className="h-full w-full object-cover"
                         />
-                        <div className="absolute bottom-3 left-3 bg-white/90 px-3 py-1 rounded-md text-xs">
-                          203 W Freeman Ave, El Dorado Springs, MO
-                        </div>
                       </div>
                     </CardContent>
                   </Card>
@@ -320,27 +312,27 @@ export default function Home() {
       </main>
       <footer className="border-t bg-muted/40">
         <div className="container py-8 md:py-12">
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Image src="/logo.png" alt="Glamorous Paws Logo" width={40} height={40} className="rounded-full" />
-              <span className="text-xl font-bold tracking-tight">Glamorous Paws</span>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Image src="/logo.png" alt="Glamorous Paws Logo" width={40} height={40} className="rounded-full" />
+                <span className="text-xl font-bold tracking-tight">Glamorous Paws</span>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Family-owned pet grooming and bakery located in El Dorado Springs, Missouri.
+              </p>
+              <div className="flex space-x-4">
+                <Link href="https://facebook.com" className="text-muted-foreground hover:text-foreground">
+                  <Facebook className="h-5 w-5" />
+                  <span className="sr-only">Facebook</span>
+                </Link>
+                <Link href="https://instagram.com" className="text-muted-foreground hover:text-foreground">
+                  <Instagram className="h-5 w-5" />
+                  <span className="sr-only">Instagram</span>
+                </Link>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Family-owned pet grooming and bakery located in El Dorado Springs, Missouri.
-            </p>
-            <div className="flex justify-center space-x-4 mt-4">
-              <Link href="https://facebook.com" className="text-muted-foreground hover:text-foreground">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="https://instagram.com" className="text-muted-foreground hover:text-foreground">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-            </div>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="space-y-4 text-center">
+            <div className="space-y-4">
               <h3 className="text-lg font-medium">Quick Links</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -370,7 +362,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="space-y-4 text-center">
+            <div className="space-y-4">
               <h3 className="text-lg font-medium">Services</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -400,22 +392,22 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="space-y-4 text-center">
+            <div className="space-y-4">
               <h3 className="text-lg font-medium">Contact Us</h3>
               <ul className="space-y-2 text-sm">
-                <li className="flex items-center justify-center">
-                  <MapPin className="mr-2 h-4 w-4 text-muted-foreground" />
+                <li className="flex items-start">
+                  <MapPin className="mr-2 mt-0.5 h-4 w-4 text-muted-foreground" />
                   <span className="text-muted-foreground">203 W Freeman Ave, El Dorado Springs, MO, 64744</span>
                 </li>
-                <li className="flex items-center justify-center">
+                <li className="flex items-center">
                   <Phone className="mr-2 h-4 w-4 text-muted-foreground" />
                   <span className="text-muted-foreground">(417) 309-9677</span>
                 </li>
-                <li className="flex items-center justify-center">
+                <li className="flex items-center">
                   <Mail className="mr-2 h-4 w-4 text-muted-foreground" />
                   <span className="text-muted-foreground">conard_ashley@yahoo.com</span>
                 </li>
-                <li className="flex items-center justify-center">
+                <li className="flex items-center">
                   <Clock className="mr-2 h-4 w-4 text-muted-foreground" />
                   <span className="text-muted-foreground">Open now</span>
                 </li>
