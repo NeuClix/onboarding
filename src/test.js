@@ -1,5 +1,5 @@
 import { handleUserInput } from './conversationLogic.js';
-import { initializeFirebase } from './firebaseConfig.js';
+import { initializeFirebase, db } from './firebaseConfig.js';
 
 initializeFirebase();
 

@@ -1,10 +1,9 @@
 import { getWelcomeMessage, askForCompanyName, askForCompanyIndustry, askForContactInformation, askForWebsiteRequirements, askForDesignPreference, askForUniqueNeeds, offerConsultation, saveInformation } from './chatbot.js';
-import { getFirestore } from './firebaseConfig.js';
+import { db } from './firebaseConfig.js';
 
 let data = {};
 function handleUserInput(userInput, conversationState) {
   console.log("handleUserInput called with:", { userInput, conversationState });
-  const db = getFirestore();
 
   if (!userInput && conversationState !== "WELCOME" && conversationState) {
     console.log("Invalid input detected.");

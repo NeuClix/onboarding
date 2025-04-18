@@ -9,13 +9,16 @@ const firebaseConfig = {
   messagingSenderId: "481653629237",
   appId: "1:481653629237:web:6457671f88608b75456c7c"
 };
-const initializeFirebase = () => {
-  initializeApp(firebaseConfig);
-  console.log("Firebase app initialized correctly");
-};
 
-export {
-  firebaseConfig,
-  initializeFirebase,
-  getFirestore,
+let db = null; // Initialize db outside
+
+const initializeFirebase = () => {
+  try{
+    const app = initializeApp(firebaseConfig);
+    db = getFirestore(app);
+    console.log("Firebase app initialized correctly");
+  }catch(e){
+    console.log("Error initializing Firebase:", e);
+  }
 };
+export { db, initializeFirebase };
